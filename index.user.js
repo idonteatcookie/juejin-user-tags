@@ -128,7 +128,7 @@
       return DOMUtils.createElement('div', {
         className: 'user-tag-stamp',
         style: `
-          position: absolute; z-index: 10; display: flex;
+          position: absolute; z-index: 9999; display: flex;
           pointer-events: none; ${position} ${styles[size] || styles.normal}
         `,
       });
