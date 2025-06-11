@@ -51,7 +51,7 @@
     STYLES: {
       MODAL_OVERLAY: `
         position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-        background: rgba(0,0,0,0.5); z-index: 10000;
+        background: rgba(0,0,0,0.5); z-index: 100;
         display: flex; justify-content: center; align-items: center;
       `,
       TAG_STAMP_BASE: `
@@ -128,7 +128,7 @@
       return DOMUtils.createElement('div', {
         className: 'user-tag-stamp',
         style: `
-          position: absolute; z-index: 9999; display: flex;
+          position: absolute; z-index: 99; display: flex;
           pointer-events: none; ${position} ${styles[size] || styles.normal}
         `,
       });
@@ -305,12 +305,12 @@
       const container = DOMUtils.createElement('div', {
         id: 'userTagButtons',
         style:
-          'z-index: 999;position: absolute;left: 330px;top: 10px;display: flex; gap: 10px;',
+          'z-index: 99;position: absolute;left: 330px;top: 10px;display: flex; gap: 10px;',
       });
 
-      const likeButton = this.createButton('👍🏻 大佬NB', CONFIG.THEMES.LIKE);
+      const likeButton = this.createButton('👍🏻 大佬', CONFIG.THEMES.LIKE);
       const dislikeButton = this.createButton(
-        '👎🏻 此人SB',
+        '👎🏻 笨比',
         CONFIG.THEMES.DISLIKE
       );
 
@@ -333,7 +333,6 @@
           font-weight: 600;
           display: flex; 
           align-items: center;
-          width: 110px;
           transition: all 0.3s ease;
           box-shadow: 0 2px 4px ${theme.PRIMARY}40;
         `,
@@ -363,9 +362,9 @@
       });
 
       buttons[0].onclick = () =>
-        ModalManager.showTagModal(userId, 'NB', true);
+        ModalManager.showTagModal(userId, '大佬', true);
       buttons[1].onclick = () =>
-        ModalManager.showTagModal(userId, 'SB', false);
+        ModalManager.showTagModal(userId, '笨比', false);
     }
   }
 
